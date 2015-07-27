@@ -11,6 +11,5 @@ centrica08.cloudapp.net
 [ambari_server]
 centrica01.cloudapp.net
 
-[db_server]
+[kdc_server]
 centrica03.cloudapp.net
-

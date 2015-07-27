@@ -1,6 +1,7 @@
 ambari_version: 2 # CSV file is different in between Ambari 1 and ambari 2.x 
 REALM: KRB.HDP
 domain: internal.cloudapp.net
-admin_user: admin
+admin_user: root/admin
 password: hadoop
 keytab_file: /Users/orenault/Developments/host-principal-keytab-list.csv
+cluster_name: hdptest

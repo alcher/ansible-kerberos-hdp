@@ -30,11 +30,11 @@
       - krb5kdc
       - kadmin
 
-  - name: copy keytab file
-    copy: src={{ keytab_file }} dest=/var/kerberos/krb5kdc/host-principal.csv
+# - name: copy keytab file
+#   copy: src={{ keytab_file }} dest=/var/kerberos/krb5kdc/host-principal.csv
 
-  - include: create_principal_ambari1.yml
-    when: ambari_version == 1 
+# - include: create_principal_ambari1.yml
+#   when: ambari_version == 1 
 
-  - include: create_principal_ambari2.yml
-    when: ambari_version == 2
+# - include: create_principal_ambari2.yml
+#   when: ambari_version == 2

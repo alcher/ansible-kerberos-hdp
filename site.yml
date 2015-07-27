@@ -5,14 +5,14 @@
   roles:
     - krb-client
 
-- hosts: kdc
+- hosts: kdc_server
   user: orenault
   sudo: yes
   roles:
     - kdc
 
-- hosts: all
+- hosts: ambari_server
   user: orenault
   sudo: yes
   roles:
-    - keytabs
+    - ambari-kerberos-setup

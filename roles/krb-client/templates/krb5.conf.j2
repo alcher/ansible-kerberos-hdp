@@ -13,8 +13,8 @@
 
 [realms]
  {{ REALM }} = {
-  kdc = {{ hostvars[groups['kdc'][0]]['ansible_fqdn'] }}
-  admin_server = {{ hostvars[groups['kdc'][0]]['ansible_fqdn'] }}
+  kdc = {{ hostvars[groups['kdc_server'][0]]['ansible_fqdn'] }}
+  admin_server = {{ hostvars[groups['kdc_server'][0]]['ansible_fqdn'] }}
  }
 
 [domain_realm]
