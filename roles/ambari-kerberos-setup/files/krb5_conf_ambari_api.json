@@ -15,7 +15,7 @@
 [libdefaults]\n
 renew_lifetime = 7d\n
 forwardable = true\n
-default_realm = {{ REALM }}\n
+default_realm = {{realm|upper()}}\n
 ticket_lifetime = 24h\n
 dns_lookup_realm = false\n
 dns_lookup_kdc = false\n

@@ -18,11 +18,11 @@
   - debug: var=kdc_config
 
   - name: initialise kdc
-    shell: /usr/sbin/kdb5_util create -s -P {{ password }}
+    shell: /usr/sbin/kdb5_util create -s -P {{ kdc_password }}
     when: kdc_config.stat.exists == false
 
   - name: create admin user
-    shell: /usr/sbin/kadmin.local -q "addprinc -pw {{ password }} {{ admin_user }}/admin"
+    shell: /usr/sbin/kadmin.local -q "addprinc -pw {{ kdc_password }} {{ kdc_admin }}/admin"
 
   - name: start services
     service: name={{ item }} state=started enabled=yes

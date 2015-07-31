@@ -1,7 +1,18 @@
 ambari_version: 2 # CSV file is different in between Ambari 1 and ambari 2.x 
 REALM: KRB.HDP
 domain: internal.cloudapp.net
-admin_user: root/admin
-password: hadoop
+
+# Automatically append /admin after the user
+# To get admin on kdc <kdc_admin>/admin
+kdc_admin: root
+kdc_password: hadoop
 keytab_file: /Users/orenault/Developments/host-principal-keytab-list.csv
 cluster_name: hdptest
+
+# Create a list of host to be used during the KRB installation 
+# it's a two step process
+# use hosts_list in the roles with_flattened 
+host_list: "{% for host in groups['all'] -%}
+{{ hostvars[host].ansible_fqdn}}
+{% endfor %}"
+hosts_list: host_list.split()
